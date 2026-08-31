@@ -1,0 +1,26 @@
+.details{
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-left: 20px;
+
+}
+
+.trend{
+   color: #ffffff;
+   font-size: large;
+
+
+}
+
+.see{
+  color: var(--color-accent);
+}
+
+.movie-list{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) ;
+  gap: 5px;
+}
+

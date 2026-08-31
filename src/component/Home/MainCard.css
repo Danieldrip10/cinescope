@@ -1,0 +1,8 @@
+.dan{
+   margin-top: 30px;
+  width: 200px;
+  border-radius: 20px;
+  border: 5px solid #292933;
+  height: 270px;
+  display: flex;
+} 

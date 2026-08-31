@@ -1,0 +1,55 @@
+.header{
+  background-color: var(#000000);
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  padding: 5px 50px;
+  border-bottom: 1px solid #a1a1aa;
+}
+
+.first-nav{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+
+}
+
+
+.logo{
+  
+  align-items: center;
+  justify-content: center;
+}
+
+.brand{
+  display: flex;
+  gap: 20px;
+  
+align-items: center;
+}
+
+.brand-name{
+  color: var(--color-accent) ;
+  font-size: 24px;
+  font-weight:700;
+  letter-spacing: -0.5px;
+}
+
+.links{
+  gap: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.links a{
+  color: #a1a1aa;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 25px 0;
+}
+
+.links a:first-child{
+  color: #eae2c9;
+}

@@ -1,0 +1,29 @@
+.main{
+  margin-top: 40px;
+  margin-left: 25px;
+}
+
+
+
+
+
+.photo{
+  margin-top: 30px;
+  width: 200px;
+  border-radius: 20px;
+  border: 5px solid #292933;
+  height: 270px;
+}
+
+.subtittle{
+  display: block;
+  color: #ffffff;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.rate{
+  display: block;
+  margin-left: 10px;
+  color: var(--color-accent);
+}

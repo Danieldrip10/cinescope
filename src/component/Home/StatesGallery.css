@@ -1,0 +1,48 @@
+.subtittle{
+  font-size: small;
+  color: #a1a1aa;
+}
+
+.begin{
+  display: block;
+ 
+  margin-left: 30px;
+}
+
+.overall{
+ gap: 10px;
+  display: flex;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.same{
+   padding: 30px;
+   background-color: #15151c;
+   height: 350px;
+   border-radius: 10px;
+   width: 320px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+}
+
+.middle{
+  margin-top: 140px;
+}
+
+.try-again{
+  border-radius: 13px;
+  color: #0b0b0f;
+  background-color: var(--color-accent);
+  padding: 10px;
+  border: none;
+}
+
+.search-btn{
+  border-radius: 13px;
+  color: #ffffff;
+  background-color: #292933;
+  padding: 10px;
+  border: none;
+}

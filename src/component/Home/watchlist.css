@@ -1,0 +1,25 @@
+.mighty{
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e27;
+  margin-top: 40px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 15px;
+  width: 97%;
+  margin-left: 25px;
+}
+ 
+
+.btn-dis{
+  background-color: var(--color-accent);
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+}
+
+.subtittle-watch{
+  color: #e6dbb5;
+}
+  

@@ -1,8 +1,36 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../shared/logo";
 import "./Register.css";
 function Register() {
 
+    const [login, setLogin] = useState(false)
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        password:"",
+        confirmPassword: ""
+    })
+
+    const handleChange = (e) =>{
+        const {name, value} = e.target;
+        setFormData(prev =>({...prev,[name]:value}))
+        
+    }
+
+const handleSubmit = (e) => {
+            e.preventDefault()
+            if (!formData.fullName || !formData.email || !formData.password) {
+                alert(`All input are required`)
+            }
+        else{
+            setLogin(true)
+        }
+        
+}
+
+// if (login){
+//     return <signIn/>
+// } 
 
     return (
         <div className="register-page">
@@ -35,7 +63,7 @@ function Register() {
 
                 <form
                     className="register-form"
-
+                    onSubmit={handleSubmit}
                 >
 
                     <div className="register-field">
@@ -45,9 +73,12 @@ function Register() {
 
                         <input
                             className="register-input"
+                            name="fullName"
+                            value={formData.fullName}
                             type="text"
+                            onChange={handleChange}
                             placeholder="Enter your full name"
-                            required
+                            
                         />
                     </div>
 
@@ -59,9 +90,12 @@ function Register() {
 
                         <input
                             className="register-input"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             type="email"
                             placeholder="Enter your email"
-                            required
+                            
                         />
                     </div>
 
@@ -73,9 +107,12 @@ function Register() {
 
                         <input
                             className="register-input"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
                             type="password"
                             placeholder="Create a password"
-                            required
+                        
                         />
                     </div>
 
@@ -87,9 +124,12 @@ function Register() {
 
                         <input
                             className="register-input"
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
                             type="password"
+                            onChange={handleChange}
                             placeholder="Confirm your password"
-                            required
+                            
                         />
                     </div>
 
@@ -98,7 +138,7 @@ function Register() {
                         type="submit"
                         className="register-submit"
                     >
-                        Create Account
+                        {login ? "Signing...." : "Create Account"}
                     </button>
 
                 </form>

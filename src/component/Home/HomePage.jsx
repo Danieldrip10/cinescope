@@ -39,7 +39,7 @@ export default function HomePage() {
       } catch (error) {
         console.log(error);
       }
-    };
+    };  
     handlefetch();
   }, []);
 

@@ -53,3 +53,11 @@ align-items: center;
 .links a:first-child{
   color: #eae2c9;
 }
+
+
+.auth-btn{
+  display: flex;
+gap: 10px;
+}
+
+

@@ -18,9 +18,28 @@ const handleChange = (e) => {
   
 }
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   console.log(loginData)
+  console.log(loginData)
+    try {
+     
+      const response = await fetch(
+        "https://zyloo-api-v1.onrender.com/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+         credentials: "include",
+          body: JSON.stringify(loginData),
+        },
+      );
+
+      const datafromserver = await response.json();   
+
+      console.log(datafromserver);
+    } catch (error) {
+      console.log(error);
+    }
 }
 
 

@@ -1,0 +1,118 @@
+
+
+.picture{
+   min-height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+display: flex;
+align-items: center;
+opacity: 50px;
+}
+.last-big-container{
+  display: flex;
+  margin-top: 350px;
+}
+
+.small-card{
+  width: 700px;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+.img-card{
+  width: 900px;
+  border-radius: 10px;
+border: 2px solid #292933;
+height: 380px;
+}
+
+.movie-info{
+  margin-left: 30px;
+  margin-right: 1000px;
+}
+
+.year{
+  display: flex;
+  gap: 50px;
+  margin-top: 10px;
+}
+
+.movie-rate{
+    font-weight: 500;
+}
+
+.hour{
+  color: bisque;
+  font-weight: 300;
+}
+
+.all-btn{
+ display: flex;
+ gap: 15px;
+ margin-top: 10px;
+
+
+}
+
+.one-btn{
+background-color: #1e1e27;
+width: 50px;
+border: 0.3px solid bisque;
+color: white;
+padding: 6px 15px;
+width: 80px;
+
+}
+
+.short-tittle{
+  color: bisque;
+  margin-right: 50px;
+}
+
+.watchlist-add{
+  background-color: #f5c518;
+  font-weight: 300;
+  padding: 10px 15px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+}
+
+.watch-trail{
+  background-color: #1e1e27;
+  font-weight: 500;
+  padding: 10px 15px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+
+}
+
+.btn-cont{
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.overview{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.full-overview{
+  margin-top: 40px;
+}
+
+.back{
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-cast{
+  width: 50%;
+  border-radius: 50%;
+}
+

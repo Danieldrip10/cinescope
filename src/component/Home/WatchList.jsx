@@ -1,23 +1,37 @@
 import "../Home/watchlist.css"
+import { useEffect, useState } from "react"
 
-export default function WatchList(props) {
+export default function WatchList() {
+  const [movieFromStorage, setMovieFromStorage] = useState([])
+ 
+
+  useEffect(() => {
+      const movie = localStorage.getItem("movie")
+      console.log()
+      const parseFromLoacalStorage = JSON.parse(movie)
+      setMovieFromStorage(parseFromLoacalStorage)
+
+  }, [])
+
   return(
     <div>
-     
-
-      <div className="movie-card">
-        <img src={props.img} alt="" className="img-photo"/>
+      {movieFromStorage?.map((movie) => {
+        return(
+             <div key={movie?.id} className="movie-card">
+        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" className="img-photo"/>
         <div className="img-rate">
-           <span className="subtittle">{props.span}</span>
-        <span className="rating">{props.rating}</span>
+           <span className="subtittle">{movie.title}</span>
+
+        {/* <span className="rating">{.rating}</span> */}
         </div>
        
+      
       </div>
+        )
+      })}
+         
 
-
-
-
-    </div>
+      </div>
 
 
     

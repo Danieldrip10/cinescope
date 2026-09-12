@@ -22,4 +22,10 @@
 .subtittle-watch{
   color: #e6dbb5;
 }
-  
+ 
+
+.img-photo{
+  width: 3009px;
+   display: flex;
+  grid-template-columns: repeat(5, 1fr) ;
+}

@@ -1,5 +1,6 @@
 import Logo from "../shared/logo"
 import "../Home/NavBar.css"
+import { Link } from "react-router-dom"
 
 export default function NavBar() {
   return(
@@ -20,9 +21,11 @@ export default function NavBar() {
             </div>
 
                 <div className="links">
-                  <a href="#">Home</a>
-                  <a href="#">Discover</a>
-                  <a href="#">Watchlist</a>
+                 
+                  <Link to="/">Home</Link>
+                  <Link to="/DiscoveryPage">Discover</Link>
+                  <Link to="/Watchlist">Watchlists</Link>
+                  
 
                 </div>
          </div>
@@ -30,7 +33,18 @@ export default function NavBar() {
               
                 
             
+            <div className="auth-btn">
+             
+                <Link to="/Register">
+                 <button className="trailer">Register</button>
+                </Link>
 
+                <Link to="/SignInPage">
+                <button className="trailer">SignIn</button>
+                </Link>
+              
+
+            </div>
           
 
             <div>

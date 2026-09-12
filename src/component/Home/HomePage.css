@@ -16,6 +16,9 @@
 
 .see{
   color: var(--color-accent);
+  background-color: none;
+  border: 0;
+  padding: 0;
 }
 
 .movie-list{
@@ -24,3 +27,9 @@
   gap: 5px;
 }
 
+ /* display: flex;
+    flex-direction: row;
+    scrollbar-width: none;
+    overflow: scroll;
+    gap: 5px;
+} */

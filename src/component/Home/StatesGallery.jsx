@@ -9,22 +9,9 @@ export default function StateGallery() {
       </div>
 
       <div className="overall">
-        <div className="same">
-          <div className="middle">
-            <h4>Loading Movies...</h4>
-            <span className="subtittle">Please wait</span>
-          </div>
-         
-        </div>
+        
 
-        <div className="same">
-          <div>
-            <h4 className="middle">Something went wrong.</h4>
-            <span className="subtittle">We couldn't load the movies.</span>
-            <br />
-            <button className="try-again">Try Again</button>
-          </div>
-        </div>
+       
 
         <div className="same">
           <div>

@@ -24,7 +24,7 @@ export default function WatchList() {
 
         {/* <span className="rating">{.rating}</span> */}
         </div>
-       
+       <button>Delete</button>
       
       </div>
         )

@@ -1,9 +1,7 @@
 import Logo from "../shared/logo"
 import "./signIn.css"
 import { useState } from "react"
-
-
-
+import { useNavigate } from "react-router-dom"
 
 export default function SignIn() {
 const [loginData, setLoginData] = useState({
@@ -17,6 +15,8 @@ const handleChange = (e) => {
 
   
 }
+
+const navigate = useNavigate()
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -34,8 +34,10 @@ const handleSubmit = async (e) => {
         },
       );
 
-      const datafromserver = await response.json();   
-
+      const datafromserver = await response.json();  
+      
+      localStorage.setItem("token", JSON.stringify(datafromserver))
+      navigate("/", {replace: true})
       console.log(datafromserver);
     } catch (error) {
       console.log(error);

@@ -122,7 +122,7 @@ export default function HomePage() {
           {trendingMovies.map((movie) => {
             return (
               <Link to={`/MovieDetails/${movie.id}`}>
-              
+                
               <MovieCard
                 key={movie.id}
                 img={movie.poster_path}

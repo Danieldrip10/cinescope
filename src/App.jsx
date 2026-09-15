@@ -7,6 +7,7 @@ import HomePages from "./pages/Hompages"
 import { Route, Routes } from "react-router-dom"
 import WatchListPage from "./pages/WatchListPage"
 import LastDetails from "./component/Home/Last"
+import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute"
 
 
 function App() {
@@ -15,13 +16,19 @@ function App() {
   return (
     <Routes>
       
-      <Route path="/DiscoveryPage" element={ <DiscoveryPage />}  />
-     <Route path="/SignInPage" element={ <SignIn />} />
-     <Route path="/" element={ <HomePages/>} />
-     <Route path="/Register" element={  <Register />} />
-     <Route path="/Watchlist" element={<WatchListPage/>}/>
-     <Route path="/MovieDetails/:id" element={<LastDetails/>}/>
      
+     <Route path="/SignInPage" element={ <SignIn />} />
+     <Route path="/Register" element={  <Register />} />
+
+    
+
+     <Route element={<ProtectedRoute />} >
+     <Route path="/" element={ <HomePages/>} />
+            <Route path="/Watchlist" element={<WatchListPage/>}/>
+             <Route path="/MovieDetails/:id" element={<LastDetails/>}/>
+              <Route path="/DiscoveryPage" element={ <DiscoveryPage />}  />
+     </Route>
+         
     
      
     </Routes>

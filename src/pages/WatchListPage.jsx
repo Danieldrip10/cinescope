@@ -1,4 +1,4 @@
-import watchone from "../../src/assets/discoveryone.jpg"
+
 import WatchList from "../component/Home/WatchList"
 
 

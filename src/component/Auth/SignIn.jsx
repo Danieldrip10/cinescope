@@ -1,128 +1,99 @@
-import Logo from "../shared/logo"
-import "./signIn.css"
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import Logo from "../shared/logo";
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
-const [loginData, setLoginData] = useState({
-  email: '',
-  password: '',
-})
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
 
-const handleChange = (e) => {
-  const {name, value} = e.target;
-  setLoginData(prev => ({...prev, [name]: value}));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  
-}
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  console.log(loginData)
-  console.log(loginData)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(loginData);
+    console.log(loginData);
     try {
-     
       const response = await fetch(
         "https://zyloo-api-v1.onrender.com/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-         credentials: "include",
+          credentials: "include",
           body: JSON.stringify(loginData),
         },
       );
 
-      const datafromserver = await response.json();  
-      
-      localStorage.setItem("token", JSON.stringify(datafromserver))
-      
-      navigate("/", {replace: true})
+      const datafromserver = await response.json();
+
+      localStorage.setItem("token", JSON.stringify(datafromserver));
+
+      navigate("/", { replace: true });
 
       console.log(datafromserver);
     } catch (error) {
       console.log(error);
     }
-}
+  };
 
-
-  return(
+  return (
     <div className="signin-page">
       <div className="signin-card">
-
-
-          <div className="signin-brand">
-              <div className="logo">
-                <Logo/>
-
-              </div>
-
-              <div className="signin-brand-name">
-                 <span>CineScope</span>
-              </div>
+        <div className="signin-brand">
+          <div className="logo">
+            <Logo />
           </div>
 
+          <div className="signin-brand-name">
+            <span>CineScope</span>
+          </div>
+        </div>
 
-         <div className="signin-header">
-           <h2 className="signin-tittle">Welcome back</h2>
-           <p className="signin-p">Sign in to continue your cinematic journey</p>
-         </div>
+        <div className="signin-header">
+          <h2 className="signin-tittle">Welcome back</h2>
+          <p className="signin-p">Sign in to continue your cinematic journey</p>
+        </div>
 
-
-
-         <form className="signin-form"
-         onSubmit={handleSubmit}
-         >
+        <form className="signin-form" onSubmit={handleSubmit}>
           <div className="signin-field">
-            <label htmlFor="email">
-                 Email
-            </label>
+            <label htmlFor="email">Email</label>
 
-            
-
-            <input type="email"
-            name="email"
-            onChange={handleChange}
-            value={loginData.email}
-            className="signin-input"
-            placeholder="Enter your email"
-            required
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={loginData.email}
+              className="signin-input"
+              placeholder="Enter your email"
+              required
             />
           </div>
 
           <div className="signin-field">
-            <label htmlFor="password">
-              Password
-            </label>
+            <label htmlFor="password">Password</label>
 
-            <input type="text"
-            name="password"
-            value={loginData.password}
-            onChange={handleChange}
-             className="signin-input"
-            placeholder="Enter your password"
+            <input
+              type="text"
+              name="password"
+              value={loginData.password}
+              onChange={handleChange}
+              className="signin-input"
+              placeholder="Enter your password"
             />
-
           </div>
 
-
-
-          <button type="submit"
-          className="signin-submit"
-          >
+          <button type="submit" className="signin-submit">
             Sign Up
           </button>
-
-
-
-         </form>
-
-
-
-
-
+        </form>
       </div>
     </div>
-  )
+  );
 }

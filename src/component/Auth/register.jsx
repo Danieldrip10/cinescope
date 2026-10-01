@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Logo from "../shared/logo";
 import "./Register.css";
-import { data } from "react-router-dom";
+
 function Register() {
   const [login, setLogin] = useState(false);
   const [formData, setFormData] = useState({
@@ -20,6 +20,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData)
+    setLogin(true)
     try {
      
       const response = await fetch(
@@ -33,7 +34,7 @@ function Register() {
       );
 
       const datafromserver = await response.json();   
-
+      setLogin(false)
       console.log(datafromserver);
     } catch (error) {
       console.log(error);

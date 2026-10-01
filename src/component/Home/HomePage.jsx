@@ -9,7 +9,7 @@ import MainCard from "./MainCaard";
 import LastDetails from "./Last";
 
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 
@@ -18,93 +18,21 @@ import LoadingSate from "./LaodingState";
 import ErrorState from "./ErrorState";
 import { Link } from "react-router-dom";
 
+import { UseMovieContext } from "../../context/MovieContext";
+
 export default function HomePage() {
-  const [tvShows, SetTvShows] = useState([]);
-  const [topRated, setTopRated] = useState([]);
-  const [trendingMovies, setTrendingMovies] = useState([]);
-  const [popularMovies, setPopularMovies] = useState([]);
+ 
   const [loading, setLoading] = useState(false)
  
   // const [hanleError, setHandleError] = useState(false)
+ 
+
+  const {topRated, trendingMovies, popularMovies, tvShows} = UseMovieContext()
 
 
 
 
-  const apiKey = import.meta.env.VITE_API_KEY;
-
-   useEffect(() => {
-    const handlefetch = async () => {
-      
-      try {
-
-        const response = await fetch(
-          `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`,
-        );
-        const data = await response.json();
-        SetTvShows(data.results);
-        console.log(data.results) 
-        
-      } catch (error) {
-        console.log(error);
-      
-        
-      }
-    };  
-    handlefetch();
-  }, []);
-
-
-  useEffect(() => {
-    const handleFetch = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`,
-        );
-        const data = await response.json();
-        console.log(data.results);
-        setTopRated(data.results);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    handleFetch();
-  }, []);
-
-  useEffect(() => {
-    const handlefetch = async () => {
-      setLoading(true)
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`,
-        );
-        const data = await response.json();
-        setTrendingMovies(data?.results);
-        // console.log(data.results)
-        setLoading(false)
-      } catch (error) {
-        console.log(error);
-        setLoading(false)
-        
-      }
-    };
-    handlefetch();
-  }, []);
-
-  useEffect(() => {
-    const handleFetch = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`,
-        );
-        const data = await response.json();
-        console.log(data.results);
-        setPopularMovies(data.results);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    handleFetch();
-  }, []);
+   
 
   return (
     <div>
@@ -113,7 +41,7 @@ export default function HomePage() {
       <div>
         <div className="details">
           <h3 className="trend">Trending Now</h3>
-          <button classNaxme="see">See all</button>
+          <button className="see">See all</button>
         </div>
         {loading ? <LoadingSate /> : 
 
@@ -132,7 +60,7 @@ export default function HomePage() {
               />
               </Link>
               
-
+              
 
             );
           })}

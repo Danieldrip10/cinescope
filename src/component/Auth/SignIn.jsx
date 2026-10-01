@@ -37,7 +37,9 @@ const handleSubmit = async (e) => {
       const datafromserver = await response.json();  
       
       localStorage.setItem("token", JSON.stringify(datafromserver))
+      
       navigate("/", {replace: true})
+
       console.log(datafromserver);
     } catch (error) {
       console.log(error);

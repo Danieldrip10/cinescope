@@ -1,4 +1,4 @@
-.header{
+.header {
   background-color: var(#000000);
   display: flex;
   justify-content: space-between;
@@ -8,56 +8,67 @@
   border-bottom: 1px solid #a1a1aa;
 }
 
-.first-nav{
+.first-nav {
   display: flex;
   align-items: center;
   gap: 60px;
-
-
 }
 
-
-.logo{
-  
+.logo {
   align-items: center;
   justify-content: center;
 }
 
-.brand{
+.brand {
   display: flex;
   gap: 20px;
-  
-align-items: center;
+
+  align-items: center;
 }
 
-.brand-name{
-  color: var(--color-accent) ;
+.brand-name {
+  color: var(--color-accent);
   font-size: 24px;
-  font-weight:700;
+  font-weight: 700;
   letter-spacing: -0.5px;
 }
 
-.links{
+.links {
   gap: 38px;
   display: flex;
   align-items: center;
 }
 
-.links a{
+.links a {
   color: #a1a1aa;
   font-size: 15px;
   font-weight: 500;
   padding: 25px 0;
 }
 
-.links a:first-child{
+.links a:first-child {
   color: #eae2c9;
 }
 
-
-.auth-btn{
+.auth-btn {
   display: flex;
-gap: 10px;
+  align-items: center;
+  gap: 10px;
 }
 
+.pro {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
 
+.prr-contain {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 5px;
+}
+
+.hello {
+  margin-left: 50px;
+}

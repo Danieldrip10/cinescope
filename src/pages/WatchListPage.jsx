@@ -11,7 +11,7 @@ export default function WatchListPage() {
           <p className="discovery-subtittle">
             Movies you have saved for later.
           </p>
-        </div>
+        </div> 
 
         <div className="movie-list">
           <WatchList  />
